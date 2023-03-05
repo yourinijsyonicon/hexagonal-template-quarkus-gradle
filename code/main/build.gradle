@@ -1,0 +1,62 @@
+plugins {
+    id "com.gorylenko.gradle-git-properties" version "2.4.1"
+    id 'java'
+    id 'io.quarkus'
+}
+
+jar {
+    enabled = false
+}
+
+configurations {
+    developmentOnly
+    runtimeClasspath {
+        extendsFrom developmentOnly
+    }
+}
+
+dependencies {
+    implementation project(':vocabulary')
+    implementation project(':application-api')
+    implementation project(':use-cases')
+    implementation project(':queries')
+    implementation project(':domain')
+
+    implementation project(':rest-adapter')
+
+    implementation project(':in-memory-adapter')
+
+    implementation 'io.quarkus:quarkus-logging-gelf'
+    implementation 'io.quarkus:quarkus-logging-json'
+    implementation 'io.micrometer:micrometer-registry-prometheus'
+    implementation 'net.logstash.logback:logstash-logback-encoder'
+}
+
+description = 'main'
+
+def dockerBuildName = 'hexagonal-template-java17-quarkus'
+tasks.register('copyJarToDockerDir', Copy) {
+    from "$buildDir/libs"
+    include "**/*.jar"
+    into "$buildDir/docker"
+}
+
+tasks.register('copyDockerfileToDockerDir', Copy) {
+    from "$projectDir/src/main/docker"
+    include "**/*"
+    into "$buildDir/docker"
+}
+
+tasks.register('buildDockerImage', Exec) {
+    workingDir "$buildDir"
+    commandLine "podman", "build", "-t", "yonicon/${dockerBuildName}:${project.version}", "docker"
+}
+
+tasks.register('pushDockerImage', Exec) {
+    commandLine "podman", "push", "yonicon/${dockerBuildName}:${project.version}"
+}
+
+copyJarToDockerDir.dependsOn build
+buildDockerImage.dependsOn copyJarToDockerDir
+buildDockerImage.dependsOn copyDockerfileToDockerDir
+pushDockerImage.dependsOn buildDockerImage

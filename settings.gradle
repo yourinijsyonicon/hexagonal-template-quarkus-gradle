@@ -1,0 +1,49 @@
+pluginManagement {
+    repositories {
+        mavenCentral()
+        gradlePluginPortal()
+        mavenLocal()
+    }
+    plugins {
+        id "${quarkusPluginId}" version "${quarkusPluginVersion}"
+    }
+}
+
+rootProject.name = 'be.yonicon.template-java17-quarkus-gradle'
+
+include(':in-memory-adapter')
+include(':rdbms-adapter')
+
+include(':rest-adapter')
+include(':acceptance-tests')
+
+include(':vocabulary')
+include(':application-api')
+include(':domain')
+include(':use-cases')
+include(':queries')
+
+include(':main')
+
+include(':test-doubles')
+
+include(':sanity-tests')
+
+project(":in-memory-adapter").projectDir = file('code/infra/backend-adapters/in-memory-adapter')
+project(":rdbms-adapter").projectDir = file('code/infra/backend-adapters/rdbms-adapter')
+
+project(":rest-adapter").projectDir = file('code/infra/frontend-adapters/rest-adapter')
+project(":acceptance-tests").projectDir = file('code/infra/frontend-adapters/acceptance-tests')
+
+project(":vocabulary").projectDir = file('code/vocabulary')
+project(":application-api").projectDir = file('code/application/application-api')
+project(":domain").projectDir = file('code/application/domain')
+project(":use-cases").projectDir = file('code/application/use-cases')
+project(":queries").projectDir = file('code/application/queries')
+
+project(":main").projectDir = file('code/main')
+
+project(":test-doubles").projectDir = file('code/test-doubles')
+
+project(":sanity-tests").projectDir = file('code/sanity-tests')
+

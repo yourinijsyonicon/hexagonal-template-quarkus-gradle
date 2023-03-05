@@ -1,0 +1,11 @@
+dependencies {
+    testImplementation project(':vocabulary')
+    testImplementation project(':in-memory-adapter')
+    testImplementation project(':test-doubles')
+    testImplementation project(':use-cases')
+    testImplementation project(':queries')
+    testImplementation project(':application-api')
+    testImplementation project(':domain')
+}
+
+description = 'acceptance-tests'

@@ -1,0 +1,12 @@
+dependencies {
+    implementation project(':vocabulary')
+    implementation project(':domain')
+    implementation project(':application-api')
+
+    testImplementation project(':in-memory-adapter') // Compromise solution
+    testImplementation project(':test-doubles')
+
+    testCompileOnly project(':queries')
+}
+
+description = 'use-cases'

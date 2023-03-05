@@ -1,0 +1,10 @@
+dependencies {
+    implementation project(':vocabulary')
+    implementation project(':application-api')
+
+    testImplementation project(':in-memory-adapter')
+    testImplementation project(':domain')
+    testImplementation project(':test-doubles')
+}
+
+description = 'queries'

@@ -1,0 +1,9 @@
+dependencies {
+    implementation project(':vocabulary')
+    implementation project(':application-api')
+    implementation project(':domain')
+    implementation 'org.junit.jupiter:junit-jupiter-api'
+    implementation 'org.assertj:assertj-core'
+}
+
+description = 'test-doubles'

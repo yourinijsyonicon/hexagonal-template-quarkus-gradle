@@ -1,0 +1,6 @@
+dependencies {
+    implementation project(':vocabulary')
+    testImplementation project(':test-doubles')
+}
+
+description = 'application-api'

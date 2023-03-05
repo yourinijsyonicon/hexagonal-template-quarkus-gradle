@@ -1,0 +1,7 @@
+dependencies {
+    implementation project(':domain')
+    implementation project(':queries')
+    implementation project(':vocabulary')
+}
+
+description = 'in-memory-adapter'

@@ -1,0 +1,62 @@
+buildscript {
+    dependencies {
+        classpath "io.spring.gradle:dependency-management-plugin:1.1.0"
+    }
+}
+
+plugins {
+    id 'java'
+}
+
+allprojects {
+    repositories {
+        mavenCentral()
+        mavenLocal()
+    }
+
+    group = 'be.yonicon.template-java17-quarkus-gradle'
+    version '0.0.1-SNAPSHOT'
+}
+
+subprojects {
+    apply plugin: 'maven-publish'
+    apply plugin: 'io.spring.dependency-management'
+    apply plugin: 'java-library'
+
+    java {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+
+    test {
+        systemProperty "java.util.logging.manager", "org.jboss.logmanager.LogManager"
+    }
+
+    compileJava {
+        options.encoding = 'UTF-8'
+        options.compilerArgs << '-parameters'
+    }
+
+    compileTestJava {
+        options.encoding = 'UTF-8'
+    }
+
+    dependencyManagement {
+        dependencies {
+            dependency 'net.logstash.logback:logstash-logback-encoder:7.2'
+            dependency 'org.assertj:assertj-core:3.24.2'
+        }
+    }
+
+    dependencies {
+        implementation enforcedPlatform("${quarkusPlatformGroupId}:${quarkusPlatformArtifactId}:${quarkusPlatformVersion}")
+        implementation 'io.quarkus:quarkus-arc'
+        implementation 'org.jboss.slf4j:slf4j-jboss-logmanager'
+        testImplementation 'org.junit.jupiter:junit-jupiter'
+        testImplementation 'org.assertj:assertj-core'
+        testImplementation 'io.quarkus:quarkus-junit5'
+        testImplementation 'io.quarkus:quarkus-junit5-mockito'
+        testImplementation 'io.rest-assured:rest-assured'
+    }
+}
+

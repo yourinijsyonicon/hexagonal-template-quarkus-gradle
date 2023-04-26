@@ -6,6 +6,7 @@ buildscript {
 
 plugins {
     id 'java'
+    id "com.gorylenko.gradle-git-properties" version "2.4.1"
 }
 
 allprojects {
@@ -43,7 +44,7 @@ subprojects {
 
     dependencyManagement {
         dependencies {
-            dependency 'net.logstash.logback:logstash-logback-encoder:7.2'
+            dependency 'net.logstash.logback:logstash-logback-encoder:7.3'
             dependency 'org.assertj:assertj-core:3.24.2'
         }
     }

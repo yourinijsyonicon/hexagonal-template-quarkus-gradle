@@ -1,7 +1,7 @@
 plugins {
-    id "com.gorylenko.gradle-git-properties" version "2.4.1"
     id 'java'
     id 'io.quarkus'
+    id "com.gorylenko.gradle-git-properties"
 }
 
 jar {

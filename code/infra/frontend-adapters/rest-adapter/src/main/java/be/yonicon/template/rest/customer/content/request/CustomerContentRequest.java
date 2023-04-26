@@ -9,19 +9,19 @@ import javax.validation.constraints.NotBlank;
 @Valid
 public class CustomerContentRequest {
     @NotBlank(message = "Please provide The Commercial Name")
-    @Schema(name = "commercialName", example = "The Commercial Name", required = true, description = "The Commercial Name of our Customer")
+    @Schema(example = "The Commercial Name", required = true, description = "The Commercial Name of our Customer")
     private String commercialName;
 
     @NotBlank(message = "Please provide the Legal Name")
-    @Schema(name = "legalName", example = "The Legal Name", description = "The Legal Name of our Customer")
+    @Schema(example = "The Legal Name", description = "The Legal Name of our Customer")
     private String legalName;
 
     @NotBlank(message = "Please provide the Contact Person")
-    @Schema(name = "contactPerson", example = "Joske Vermeulen", description = "The Contact Person of our customer")
+    @Schema(example = "Joske Vermeulen", description = "The Contact Person of our customer")
     private String contactPerson;
 
     @Length(min = 10, max = 10, message = "The Vat number needs to be 10 characters long")
-    @Schema(name = "vatNr", example = "0123456789", required = true, description = "The VAT number of our customer, format is without symbols (f.e. 0123456789)")
+    @Schema(example = "0123456789", required = true, description = "The VAT number of our customer, format is without symbols (f.e. 0123456789)")
     private String vatNr;
 
     public CustomerContentRequest() {

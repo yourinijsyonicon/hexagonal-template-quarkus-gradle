@@ -2,9 +2,8 @@ package be.yonicon.template.config;
 
 import be.yonicon.template.domain.DomainEventPublisher;
 import be.yonicon.template.inmem.InMemoryDomainEventPublisher;
-
-import javax.enterprise.context.Dependent;
-import javax.enterprise.inject.Produces;
+import jakarta.enterprise.context.Dependent;
+import jakarta.enterprise.inject.Produces;
 
 @Dependent
 public class DomainEventConfig {

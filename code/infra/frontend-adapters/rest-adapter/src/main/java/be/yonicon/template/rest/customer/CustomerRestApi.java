@@ -2,13 +2,13 @@ package be.yonicon.template.rest.customer;
 
 import be.yonicon.template.rest.customer.content.request.CustomerContentRequest;
 import be.yonicon.template.rest.customer.content.response.CustomerContentResponse;
+import jakarta.validation.Valid;
+import jakarta.ws.rs.PathParam;
 import org.eclipse.microprofile.openapi.annotations.Operation;
 import org.eclipse.microprofile.openapi.annotations.parameters.RequestBody;
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponse;
 import org.eclipse.microprofile.openapi.annotations.tags.Tag;
 
-import javax.validation.Valid;
-import javax.ws.rs.PathParam;
 import java.util.List;
 
 @Tag(name = "CustomerRestApi", description = "Customer Rest API Operations")

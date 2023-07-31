@@ -15,9 +15,8 @@ import be.yonicon.template.query.customer.ListCustomersQuery;
 import be.yonicon.template.usecase.customer.create.CreateCustomerUseCase;
 import be.yonicon.template.usecase.customer.delete.DeleteCustomerUseCase;
 import be.yonicon.template.usecase.customer.update.UpdateCustomerUseCase;
-
-import javax.enterprise.context.Dependent;
-import javax.enterprise.inject.Produces;
+import jakarta.enterprise.context.Dependent;
+import jakarta.enterprise.inject.Produces;
 
 @Dependent
 public class ApplicationConfig {

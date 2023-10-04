@@ -17,14 +17,19 @@ Swagger UI available at :
 http://localhost:8080/q/swagger-ui/
 
 ## Links
-...
+If you want to generate a template from scratch, you can visit [Quarkus Setup Wizard](https://code.quarkus.io/) to generate a basic setup.
+You can introduce modules cfr this template on the go as you need. 
 
 ## Remarks
+### Get Started
+If you want to start a new Quarkus project I suggest using the Quarkus Setup Wizard (see links). This template is simply for demo purposes or
+you want to see Quarkus combined in a hexagon setup.
+
 ### Mac / MX - aarch64 architecture
 For Mac users having aarch64 based architecture, check [installation info](https://dev.to/maksimrv/install-graalvm-on-macos-m1-1p8n)
 
-### GraalVM Updater - GraalVM directory is invalid 
-For Java 17+ graalvm installations; the default recommended way of settings GRAALVM_HOME etc. didn't work for me. 
+### Java 17 GraalVM Updater - GraalVM directory is invalid 
+For Java 17 graalvm installations; the default recommended way of settings GRAALVM_HOME etc. didn't work for me. 
 For some reason I had to use the gu binary located in ../Contents/Home/lib/installer/bin/gu.
 
 Using the one under ../Contents/Home/bin/gu or using path did **not** work for me. When trying to do so I received following 
@@ -36,6 +41,8 @@ Setting GRAALVM_HOME and GRAAL_HOME, but it did not fix the issue. It seems othe
 
 You can install the native-image component using the one available under ../Contents/Home/lib/installer/bin/gu. After installing
 the native-image component, you should have no issue building the native image.
+
+Note : For newer GraalVM installations (tested with GraalVM v21.x.x) the above steps are not necessary anymore.
 
 ## Generated Quarkus Documentation :
 

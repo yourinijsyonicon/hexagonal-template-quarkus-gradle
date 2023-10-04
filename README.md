@@ -1,4 +1,6 @@
-# Hexagonal Template
+# Hexagonal Template 
+
+Disclaimer: _Originally built for GraalVM 17. However, there were issues with the build which were resolved in GraalVM Java 21._
 
 Can be used as a starting point for ports and adapters or hexaginal architecture based applications.
 

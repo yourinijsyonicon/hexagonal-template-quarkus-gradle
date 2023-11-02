@@ -9,7 +9,7 @@ pluginManagement {
     }
 }
 
-rootProject.name = 'be.yonicon.template-java17-quarkus-gradle'
+rootProject.name = 'be.yonicon.template-quarkus-gradle'
 
 include(':in-memory-adapter')
 include(':rdbms-adapter')

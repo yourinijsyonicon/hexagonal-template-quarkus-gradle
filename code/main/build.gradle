@@ -34,7 +34,7 @@ dependencies {
 
 description = 'main'
 
-def dockerBuildName = 'hexagonal-template-java17-quarkus'
+def dockerBuildName = 'hexagonal-template-quarkus'
 tasks.register('copyJarToDockerDir', Copy) {
     from "$buildDir/libs"
     include "**/*.jar"

@@ -1,6 +1,6 @@
 buildscript {
     dependencies {
-        classpath "io.spring.gradle:dependency-management-plugin:1.1.3"
+        classpath "io.spring.gradle:dependency-management-plugin:1.1.4"
     }
 }
 
@@ -45,7 +45,7 @@ subprojects {
     dependencyManagement {
         dependencies {
             dependency 'net.logstash.logback:logstash-logback-encoder:7.4'
-            dependency 'org.assertj:assertj-core:3.24.2'
+            dependency 'org.assertj:assertj-core:3.25.3'
         }
     }
 
